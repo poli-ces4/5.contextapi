@@ -7,6 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 
 const Header = () => {
+	const user = { name: 'Giovanny' };
 	return (
 		<Box sx={{ flexGrow: 1 }}>
 			<AppBar position='static'>
@@ -21,9 +22,15 @@ const Header = () => {
 						<MenuIcon />
 					</IconButton>
 					<Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
-						News
+						{user ? `Hola ${user.name}` : 'Bienvenid@'}
 					</Typography>
-					<Button color='inherit'>Login</Button>
+					{user ? (
+						<Button color='inherit'>Logout</Button>
+					) : (
+						<Button color='inherit' variant='outlined'>
+							Login
+						</Button>
+					)}
 				</Toolbar>
 			</AppBar>
 		</Box>
