@@ -1,7 +1,11 @@
-import React from 'react';
-
+import { Container } from '@mui/material';
+import Header from './components/Header';
 const App = () => {
-	return <div>App</div>;
+	return (
+		<Container>
+			<Header />
+		</Container>
+	);
 };
 
 export default App;
