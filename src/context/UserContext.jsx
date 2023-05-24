@@ -12,7 +12,10 @@ const UserProvider = ({ children }) => {
 	const logout = () => {
 		setUser(null);
 	};
-	const data = { user, login, logout };
+	const favoriteMovieToUser = movieId => {
+		alert(movieId);
+	};
+	const data = { user, login, logout, favoriteMovieToUser };
 	return <UserContext.Provider value={data}>{children}</UserContext.Provider>;
 };
 

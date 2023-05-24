@@ -7,7 +7,7 @@ import { useContext } from 'react';
 import UserContext from '../context/UserContext';
 
 const Movie = ({ movie }) => {
-	const { user } = useContext(UserContext);
+	const { user, favoriteMovieToUser } = useContext(UserContext);
 	const isFavorite = user?.moviesFavorites?.includes(movie.id);
 	return (
 		<Card sx={{ maxWidth: 345 }}>
@@ -25,14 +25,16 @@ const Movie = ({ movie }) => {
 				</CardContent>
 			</CardActionArea>
 			<CardActions>
-                {user?.id && (<Button
-					size='small'
-					color={isFavorite ? 'success' : 'primary'}
-					variant={isFavorite ? 'contained' : 'outlined'}
-				>
-					Favorite
-				</Button>)}
-				
+				{user?.id && (
+					<Button
+						onClick={() => favoriteMovieToUser(movie.id)}
+						size='small'
+						color={isFavorite ? 'success' : 'primary'}
+						variant={isFavorite ? 'contained' : 'outlined'}
+					>
+						Favorite
+					</Button>
+				)}
 			</CardActions>
 		</Card>
 	);
