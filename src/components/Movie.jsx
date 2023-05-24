@@ -25,13 +25,14 @@ const Movie = ({ movie }) => {
 				</CardContent>
 			</CardActionArea>
 			<CardActions>
-				<Button
+                {user?.id && (<Button
 					size='small'
 					color={isFavorite ? 'success' : 'primary'}
 					variant={isFavorite ? 'contained' : 'outlined'}
 				>
 					Favorite
-				</Button>
+				</Button>)}
+				
 			</CardActions>
 		</Card>
 	);
