@@ -5,9 +5,11 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import { useContext } from 'react';
+import UserContext from '../context/UserContext';
 
 const Header = () => {
-	const user = { name: 'Giovanny' };
+	const { user, login, logout } = useContext(UserContext);
 	return (
 		<Box sx={{ flexGrow: 1 }}>
 			<AppBar position='static'>
@@ -25,9 +27,11 @@ const Header = () => {
 						{user ? `Hola ${user.name}` : 'Bienvenid@'}
 					</Typography>
 					{user ? (
-						<Button color='inherit'>Logout</Button>
+						<Button onClick={logout} color='inherit'>
+							Logout
+						</Button>
 					) : (
-						<Button color='inherit' variant='outlined'>
+						<Button onClick={login} color='inherit' variant='outlined'>
 							Login
 						</Button>
 					)}
