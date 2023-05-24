@@ -9,6 +9,7 @@ import { useContext } from 'react';
 import UserContext from '../context/UserContext';
 
 const Header = () => {
+	console.log('Header');
 	const { user, login, logout } = useContext(UserContext);
 	return (
 		<Box sx={{ flexGrow: 1 }}>

@@ -1,26 +1,15 @@
 import { Container } from '@mui/material';
-import { useState } from 'react';
 import Header from './components/Header';
 import MovieList from './components/MovieList';
-import UserContext from './context/UserContext';
-
-const initialUser = { id: 1, name: 'Giovanny' };
+import { UserProvider } from './context/UserContext';
 
 const App = () => {
-	const [user, setUser] = useState(initialUser);
-	const login = () => {
-		setUser(initialUser);
-	};
-	const logout = () => {
-		setUser(null);
-	};
-	const data = { user, login, logout };
 	return (
 		<Container>
-			<UserContext.Provider value={data}>
+			<UserProvider>
 				<Header />
-			</UserContext.Provider>
-			<MovieList />
+				<MovieList />
+			</UserProvider>
 		</Container>
 	);
 };

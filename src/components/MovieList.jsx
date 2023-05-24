@@ -1,4 +1,5 @@
 const MovieList = () => {
+	console.log('MovieList');
 	return <div>MovieList</div>;
 };
 
