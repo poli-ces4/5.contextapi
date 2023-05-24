@@ -9,10 +9,9 @@ import { useContext } from 'react';
 import UserContext from '../context/UserContext';
 
 const Header = () => {
-	console.log('Header');
 	const { user, login, logout } = useContext(UserContext);
 	return (
-		<Box sx={{ flexGrow: 1 }}>
+		<Box sx={{ flexGrow: 1, marginBottom: 3 }}>
 			<AppBar position='static'>
 				<Toolbar>
 					<IconButton
